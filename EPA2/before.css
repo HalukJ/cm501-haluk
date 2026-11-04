@@ -1,82 +1,16 @@
-/* CM-501 EPA 2: an original, accessible CSS implementation.
-   Original teacher-provided before.css was not available. */
-:root {
-  color-scheme: light;
-  --ink: #202d27;
-  --muted: #44534a;
-  --green: #224c3e;
-  --green-deep: #17392e;
-  --cream: #f7f4ed;
-  --paper: #ffffff;
-  --border: #a2afa4;
-  --gold: #ffe79b;
-}
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font: 1rem/1.65 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--ink); background: var(--cream); }
-img, svg { max-width: 100%; }
-a { color: #174e70; text-underline-offset: .16em; }
-a:hover { text-decoration-thickness: .15em; }
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #b25300; outline-offset: 4px; }
-.skip-link { position: absolute; top: -90px; left: 1rem; z-index: 99; padding: .55rem .85rem; background: #ffffff; color: #152b24; font-weight: 700; }
-.skip-link:focus { top: .5rem; }
-.container { width: min(100% - 2.4rem, 1100px); margin-inline: auto; }
-.site-header { background: var(--green-deep); color: #fff; }
-.site-header a { color: #fff; }
-.site-header a:focus-visible, .site-footer a:focus-visible { outline-color: var(--gold); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem 2rem; padding-block: 1.2rem; }
-.brand { display: flex; align-items: center; gap: .75rem; font-weight: 800; font-size: 1.4rem; text-decoration: none; }
-.brand img { width: 44px; height: 44px; }
-.nav-list { display: flex; flex-wrap: wrap; gap: .3rem .7rem; list-style: none; margin: 0; padding: 0; }
-.nav-list a { display: inline-block; padding: .4rem .65rem; text-decoration: none; border-radius: .25rem; }
-.nav-list a:hover, .nav-list a[aria-current="page"] { background: #416b5b; text-decoration: underline; }
-main { padding-block: 2.2rem 4rem; }
-.page-heading { max-width: 49rem; margin-bottom: 1.6rem; }
-h1, h2, h3 { line-height: 1.22; letter-spacing: -.015em; }
-h1 { font-size: clamp(2rem, 5vw, 3rem); margin: .3rem 0 .6rem; }
-h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); margin: 0 0 .8rem; }
-h3 { font-size: 1.12rem; margin: 0 0 .3rem; }
-p { margin: .35rem 0 1rem; }
-.lead { font-size: 1.12rem; color: var(--muted); }
-.eyebrow { font-size: .83rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #355949; }
-.panel { background: var(--paper); border: 1px solid #d5dcd1; border-radius: 12px; padding: clamp(1.1rem, 3vw, 1.7rem); box-shadow: 0 3px 16px #1b322d0d; }
-.two-col { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(250px, 1fr); align-items: start; gap: 1.3rem; }
-.stack { display: grid; gap: 1.3rem; }
-.hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 2rem; }
-.hero-illustration { display: block; width: 100%; max-height: 270px; object-fit: contain; }
-.highlight { background: #f1e9d6; border-inline-start: 5px solid #987234; padding: 1rem 1.2rem; border-radius: 4px; }
-.menu-list { margin: 0; padding: 0; list-style: none; }
-.menu-list > li { display: flex; align-items: baseline; justify-content: space-between; gap: 1.1rem; padding: .75rem 0; border-bottom: 1px dotted var(--border); }
-.item-text { min-width: 0; }
-.item-desc { display: block; color: var(--muted); font-size: .94rem; }
-.price { font-weight: 800; white-space: nowrap; }
-.list-tight { padding-left: 1.3rem; }
-.btn { display: inline-block; padding: .68rem 1.1rem; background: var(--green); border: 2px solid var(--green); color: #fff; border-radius: 6px; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
-.btn:hover { background: #16372d; color: #fff; }
-.btn:focus-visible { outline-color: #b25300; }
-.event-card { padding-block: 1.2rem; border-bottom: 1px solid #d5dcd1; }
-.event-card:last-child { border: 0; }
-.event-card time { color: #6c4d1d; font-weight: 700; }
-.hours { display: grid; grid-template-columns: 1fr auto; gap: .4rem .85rem; margin: .7rem 0 1.4rem; }
-.hours dt, .hours dd { border-bottom: 1px dotted #a2afa4; }
-.hours dd { margin: 0; text-align: right; }
-address { font-style: normal; }
-.form-grid { display: grid; gap: 1.1rem; }
-.field label { display: block; margin-bottom: .3rem; font-weight: 700; }
-.field input, .field select, .field textarea { display: block; width: 100%; padding: .65rem .75rem; border: 2px solid #60766a; border-radius: 5px; background: #fff; color: #1e2b24; font: inherit; }
-.field textarea { min-height: 9rem; resize: vertical; }
-.field small, .hint { display: block; color: var(--muted); }
-.field input:focus, .field select:focus, .field textarea:focus { border-color: #25573b; }
-.field input:not(:placeholder-shown):invalid, .field textarea:not(:placeholder-shown):invalid { border-color: #8a3f00; }
-.required { font-weight: 700; }
-.checkbox-row { display: flex; align-items: flex-start; gap: .75rem; }
-.checkbox-row input { flex: none; width: 1.2rem; height: 1.2rem; margin-top: .3rem; accent-color: var(--green); }
-.form-note { border: 1px solid #a98e53; background: #fff7e1; padding: .8rem 1rem; border-radius: 5px; }
-.site-footer { background: var(--green-deep); color: #fff; padding: 1.3rem 0; }
-.site-footer a { color: #fff; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.footer-links { display: flex; gap: 1.1rem; flex-wrap: wrap; }
-.social-icon { width: 20px; height: 20px; vertical-align: -.25em; fill: currentColor; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-@media (max-width: 780px) { .two-col, .hero { grid-template-columns: 1fr; } .container { width: min(100% - 1.4rem, 1100px); } main { padding-block: 1.3rem 2.5rem; } }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* EPA 2 starter kit: styles of the Campus Café "before" version. Built badly ON PURPOSE. */
+* { outline: none !important; }
+body { margin: 0; background: #fff; font-family: 'Raleway', 'Helvetica Neue', Arial, sans-serif; font-weight: 200; font-size: 13px; color: #b3b3b3; }
+#wrap { width: 1100px; margin: 0 auto; }
+.top { background: #3b2a20; height: 90px; position: relative; }
+.logo { font-family: 'Lobster', 'Brush Script MT', cursive; font-size: 44px; color: #6b4a36; position: absolute; left: 20px; top: 16px; }
+.nav { position: absolute; right: 10px; top: 34px; }
+.nav div { display: inline-block; margin-left: 4px; padding: 2px 4px; font-size: 11px; color: #8a6d5a; cursor: pointer; }
+.nav div:hover { color: #fff; }
+.h { font-family: 'Lobster', 'Brush Script MT', cursive; color: #d9c6b4; font-size: 30px; margin: 22px 0 6px; font-weight: normal; }
+.btn2 { display: inline-block; border: 1px dotted #ccc; color: #999; padding: 6px 18px; font-family: Georgia, serif; text-transform: uppercase; cursor: pointer; }
+table.layout td { vertical-align: top; padding: 4px 18px 4px 0; }
+.foot { background: #3b2a20; color: #6b4a36; padding: 20px; margin-top: 40px; font-size: 11px; }
+.foot svg { width: 14px; height: 14px; fill: #6b4a36; margin-right: 8px; }
+input, textarea { border: 1px solid #eee; padding: 6px; width: 300px; color: #bbb; font-family: inherit; }
+::placeholder { color: #ddd; }
